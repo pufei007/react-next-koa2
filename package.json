@@ -1,0 +1,33 @@
+{
+  "name": "react-next-koa2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pufei007/react-next-koa2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pufei007/react-next-koa2/issues"
+  },
+  "homepage": "https://github.com/pufei007/react-next-koa2#readme",
+  "dependencies": {
+    "antd": "^3.23.2",
+    "create-next-app": "^9.0.5",
+    "global": "^4.4.0",
+    "koa": "^2.8.1",
+    "koa-router": "^7.4.0",
+    "next": "^9.0.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
