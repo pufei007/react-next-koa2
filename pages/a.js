@@ -18,6 +18,7 @@ const A = ({ router, name, time }) => (
       <div>
         <a className="link">{router.query.id}</a>
         <a href="">{name}</a>
+        <a href="">{process.env.customKey}</a>
       </div>
     </Link>
     <style jsx>{`

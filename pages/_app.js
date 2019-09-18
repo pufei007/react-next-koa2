@@ -1,7 +1,7 @@
 import App, { Container } from "next/app";
 import Layout from "../components/Layout";
 import "antd/dist/antd.css";
-
+import MyContext from "../lib/my-context";
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     console.log("app init");
@@ -19,7 +19,9 @@ class MyApp extends App {
     return (
       <Container>
         <Layout>
-          <Component {...pageProps} />
+          <MyContext.Provider value="test">
+            <Component {...pageProps} />
+          </MyContext.Provider>
         </Layout>
       </Container>
     );
