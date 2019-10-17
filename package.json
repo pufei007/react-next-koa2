@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server.js",
-    "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build": "cross-env NODE_ENV=development next build",
+    "build:pro": "cross-env NODE_ENV=production next build",
+    "deploy": "pm2 deploy ecosystem.config.js development",
+    "deploy:pro": "pm2 deploy ecosystem.config.js production"
   },
   "repository": {
     "type": "git",
