@@ -53,8 +53,7 @@ module.exports = {
       host: "148.70.131.200",
       ref: "origin/master",
       repo: "https://github.com/pufei007/react-next-koa2.git",
-      path: "/var/www/node-server/react-next-koa2",
-      "post-setup": "mkdir build",
+      path: "/var/www/node-server/react-next-koa2-dev",
       "post-deploy":
         "npm install && npm run build && pm2 reload ecosystem.config.js",
       env: {
