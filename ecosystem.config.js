@@ -43,7 +43,7 @@ module.exports = {
       host: "148.70.131.200", // 目标服务器地址
       ref: "origin/master",
       repo: "https://github.com/pufei007/react-next-koa2.git",
-      path: "/var/www/node-server/react-next-koa2", // 目标服务器部署地址
+      path: "/var/www/node-server/react-next-koa2-pm2", // 目标服务器部署地址
       // "post-setup": "mkdir build",
       "post-deploy":
         "npm install && npm run build:pro && pm2 reload ecosystem.config.js --env production"
