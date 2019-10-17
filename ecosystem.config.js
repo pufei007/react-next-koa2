@@ -44,9 +44,9 @@ module.exports = {
       ref: "origin/master",
       repo: "https://github.com/pufei007/react-next-koa2.git",
       path: "/var/www/node-server/react-next-koa2", // 目标服务器部署地址
-      "post-setup": "mkdir build",
+      // "post-setup": "mkdir build",
       "post-deploy":
-        "rm -rf buildBak && mv build buildBak && cnpm && cnpm install && npm run build:pro && pm2 reload ecosystem.config.js --env production"
+        "cnpm && cnpm install && npm run build:pro && pm2 reload ecosystem.config.js --env production"
     },
     development: {
       user: "root",
