@@ -56,7 +56,7 @@ module.exports = {
       path: "/var/www/node-server/react-next-koa2",
       "post-setup": "mkdir build",
       "post-deploy":
-        "rm -rf buildBak && mv build buildBak && cnpm && cnpm install && npm run build && pm2 reload ecosystem.config.js",
+        "rm -rf buildBak && mv build buildBak && npm && npm install && npm run build && pm2 reload ecosystem.config.js",
       // env: {
       //   NODE_ENV: "dev",
       //   PORT: 3012
