@@ -1,31 +1,45 @@
-import App, { Container } from "next/app";
-import Layout from "../components/Layout";
-import "antd/dist/antd.css";
-import MyContext from "../lib/my-context";
+import App, { Container } from 'next/app'
+import { Provider } from 'react-redux'
+
+import 'antd/dist/antd.css'
+
+import MyContext from '../lib/my-context'
+import Layout from '../components/Layout'
+
+import testHoc from '../lib/with-redux'
+
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    console.log("app init");
-    let pageProps;
+  state = {
+    context: 'value',
+  }
+
+  static async getInitialProps(ctx) {
+    const { Component } = ctx
+    console.log('app init')
+    let pageProps = {}
     if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
+      pageProps = await Component.getInitialProps(ctx)
     }
     return {
-      pageProps
-    };
+      pageProps,
+    }
   }
+
   render() {
-    const { Component, pageProps } = this.props;
-    console.log(Component);
+    const { Component, pageProps, reduxStore } = this.props
+
     return (
       <Container>
         <Layout>
-          <MyContext.Provider value="test">
-            <Component {...pageProps} />
-          </MyContext.Provider>
+          <Provider store={reduxStore}>
+            <MyContext.Provider value={this.state.context}>
+              <Component {...pageProps} />
+            </MyContext.Provider>
+          </Provider>
         </Layout>
       </Container>
-    );
+    )
   }
 }
 
-export default MyApp;
+export default testHoc(MyApp)
