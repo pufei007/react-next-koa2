@@ -6,6 +6,8 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+const port = process.env.PORT || 3000;
+
 app.prepare().then(() => {
   const server = new Koa();
   const router = new Router();
@@ -24,8 +26,8 @@ app.prepare().then(() => {
     ctx.respond = false;
   });
 
-  server.listen(3000, () => {
-    console.log("koa server on 3000");
+  server.listen(port, () => {
+    console.log(`koa server on ${port}`);
   });
 });
 

@@ -46,7 +46,10 @@ module.exports = {
       path: "/var/www/node-server/react-next-koa2-pm2", // 目标服务器部署地址
       // "post-setup": "mkdir build",
       "post-deploy":
-        "npm install && npm run build:pro && pm2 reload ecosystem.config.js --env production"
+        "npm install --registry=https://registry.npm.taobao.org && npm run build:pro && pm2 reload ecosystem.config.js --env production",
+      env: {
+        NODE_ENV: "production"
+      }
     },
     development: {
       user: "root",
@@ -55,7 +58,10 @@ module.exports = {
       repo: "https://github.com/pufei007/react-next-koa2.git",
       path: "/var/www/node-server/react-next-koa2-dev",
       "post-deploy":
-        "npm install && npm run build && pm2 reload ecosystem.config.js --env development",
+        "npm install --registry=https://registry.npm.taobao.org && npm run build && pm2 reload ecosystem.config.js --env development",
+      env: {
+        NODE_ENV: "development"
+      }
     }
   }
 };
