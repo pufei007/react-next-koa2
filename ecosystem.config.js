@@ -35,7 +35,7 @@ module.exports = {
       repo: "https://github.com/pufei007/react-next-koa2.git",
       path: "/var/www/node-server/react-next-koa2", // 目标服务器部署地址
       "post-deploy":
-        "cnpm install && pm2 reload ecosystem.config.js --env production"
+        "cnpm install && pm2 reload ecosystem.config.js  production"
     },
     dev: {
       user: "osboxes",
